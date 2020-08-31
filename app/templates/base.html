@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/me.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/animate.css/animate.min.css') }}">
+</head>
+<body>
+    <header  class="section">
+        <div class="container">
+        
+        </div>
+    </header>
+    <section  class="section hub">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </section>
+    <footer  class="section">
+        <div class="container">
+            <div class="buttons is-centered">
+                <a class="button is-text">
+                    <i class="fab fa-facebook-square fa-2x"></i>
+                  </a>
+                  <a class="button is-text">
+                    <i class="fab fa-twitter-square fa-2x"></i>
+                  </a>
+                  <a class="button is-text">
+                    <i class="fab fa-instagram-square fa-2x"></i>
+                  </a>
+                  <a class="button is-text">
+                    <i class="fab fa-tiktok fa-2x"></i>
+                  </a>
+                  <a class="button is-text">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                  </a>
+            </div>
+        </div>            
+    </footer>
+    <script src="static/js/me.js"></script>
+</body>
+</html>

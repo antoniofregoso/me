@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <article data-animation="lightSpeedInRight" >
+        <div class="box touchpoint">
+            <article class="media">
+                <div class="media-left">
+                    <i class="fab fa-youtube fa-2x"></i>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        ¿Estas suscrito a mi canal de Youtube?
+                    </div> 
+                </div>
+            </article>
+        </div>
+    </article>
+
+    <article  data-animation="lightSpeedInRight" >
+        <div class="box touchpoint">
+            <article class="media">
+                <div class="media-left">
+                    <i class="fab fa-soundcloud fa-2x"></i>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        Mi podcast en SoundCloud
+                    </div> 
+                </div>
+            </article>
+        </div>
+    </article>
+    <article data-animation="lightSpeedInRight" >
+        <div class="box touchpoint">
+            <article class="media">
+                <div class="media-left">
+                    <i class="fab fa-spotify fa-2x"></i>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        Mi podcast en Spotify
+                    </div> 
+                </div>
+            </article>
+        </div>
+    </article>
+
+
+
+    <article data-animation="lightSpeedInRight" >
+        <div class="box touchpoint">
+            <article class="media">
+                <div class="media-left">
+                    <i class="fas fa-bookmark fa-2x"></i>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        Mo blog sobre Cultura Digital
+                    </div> 
+                </div>
+            </article>
+        </div>
+    </article>
+
+    <article data-animation="lightSpeedInRight" >
+        <div class="box touchpoint">
+            <article class="media">
+                <div class="media-left">
+                    <i class="fas fa-bookmark fa-2x"></i>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        Mi blog sobre Transformación Digital
+                    </div> 
+                </div>
+            </article>
+        </div>
+    </article>
+
+    <article data-animation="lightSpeedInRight" >
+        <div class="box touchpoint">
+            <article class="media">
+                <div class="media-left">
+                    <i class="fas fa-bookmark fa-2x"></i>
+                </div>
+                <div class="media-content">
+                    <div class="content">
+                        Mi blog sobre Marketing Digital
+                    </div> 
+                </div>
+            </article>
+        </div>
+    </article>
+    <article data-animation="lightSpeedInRight" >
+        <div class="box touchpoint">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+
+                    {% if form2 %}
+                    <form action="" method="post">
+                        {{ form2.hidden_tag() }}
+                        <div class="field  has-addons">                           
+                            <div class="control is-expanded has-icons-left has-icons-right">
+                            {{ form2.email(size=64, class="input", placeholder="Tu correo")}}
+                            <span class="icon is-left">
+                                <i class="fas fa-envelope"></i>
+                              </span>
+                              <span class="icon is-medium is-right">
+                                <i class="fas fa-check fa-xs"></i>
+                              </span>
+                            {% for error in form2.email.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                            </div>
+                            <div class="control">
+                                {{ form2.submit(class="button is-fullwidth") }}
+                            </div>
+                        </div>
+                    </form>
+                    {% endif %}
+                    </div> 
+                </div>
+            </article>
+        </div>
+    </article>
+
+    <article data-animation="lightSpeedInRight" >
+        <div class="box touchpoint">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        Contacto
+                    </div> 
+                    {% if form %}
+                        <form action="" method="post">
+                            {{ form.hidden_tag() }}
+                            <div class="field">
+                                <div class="control has-icons-left has-icons-right">
+                                {{ form.name(size=32, class="input", placeholder="Tu nombre")}}
+                                <span class="icon is-left">
+                                    <i class="fas fa-address-card"></i>
+                                  </span>
+                                  <span class="icon is-medium is-right">
+                                    <i class="fas fa-check fa-xs"></i>
+                                  </span>
+                                {% for error in form.name.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="control has-icons-left has-icons-right">
+                                {{ form.email(size=64, class="input", placeholder="Tu correo")}}
+                                <span class="icon is-left">
+                                    <i class="fas fa-envelope"></i>
+                                  </span>
+                                  <span class="icon is-medium is-right">
+                                    <i class="fas fa-check fa-xs"></i>
+                                  </span>
+                                {% for error in form.email.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                {{ form.message(cols=32, rows=4,  class="textarea", placeholder="¿En qué puedo ayudarte?")}}
+                                {% for error in form.message.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                                {% endfor %}
+                                </div>
+                            </div>
+                            <div class="field ">
+                                <div class="control  is-expanded">
+                                    {{ form.submit(class="button is-fullwidth") }}
+                                </div>
+                            </div>
+                        </form>
+                        {% endif %}
+                   
+                </div>
+            </article>
+        </div>
+    </article>
+{% endblock %}
