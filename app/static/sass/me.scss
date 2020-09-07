@@ -19,16 +19,40 @@ article {
 }
 
 .touchpoint {
-    text-align: center;
     max-width: 700px;
     margin: auto;
-    font-size: 18px;
     color: $af-color;
+    &:hover {
+        color:#fff;
+        background-color: $af-color;
+        border: 2px solid white;
+    }
+}
+.is-avatar {
+    border: 2px solid white;
 }
 
+.logo {
+    width:200px;
+}
 
+footer {
+    p {
+        color:rgba(255,255,255,0.7);
+    }
+    a {
+        color:#fff;
+    &:hover {
+        color:rgba(255,255,255,0.7);
+    }
+}
+}
 
+$section-padding: 1.0rem 1.5rem;
 $box-padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+$footer-padding: 1.0rem 1.0rem;
+$footer-background-color: $af-color;
+$footer-color: #fff;
 
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/base/_all.sass";

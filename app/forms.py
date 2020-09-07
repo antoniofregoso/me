@@ -7,8 +7,8 @@ class LeadForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     message = TextAreaField('About me', validators=[Length(min=0, max=140)])
     fld1 = HiddenField("Field 1")
-    submit = SubmitField('Sign In')
+    submit = SubmitField('Inscribir')
 
 class NewsletterForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
-    submit = SubmitField('Sign In')
+    submit = SubmitField('Enviar')

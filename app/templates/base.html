@@ -4,41 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/me.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/animate.css/animate.min.css') }}">
+{% include "snippets/metatags.html" %}
 </head>
 <body>
-    <header  class="section">
+    <header  class="hero">
+      <div class="hero-body has-text-centered ">
         <div class="container">
-        
+              <figure class="image is-128x128 is-inline-block">
+                <img class="is-rounded is-avatar" src="{{ url_for('static', filename='img/face.jpg') }}">
+              </figure>
+              <h1 class="title">
+                <img class="logo" src="{{ url_for('static', filename='img/antoniofregoso.png') }}">
+              </h1>
+              <h2 class="subtitle has-text-light is-size-6">
+                Transformación Digital</br>Politicamente Incorrecta
+              </h2>
         </div>
+      </div>
     </header>
     <section  class="section hub">
-        <div class="container">
+        <div class="container has-text-centered is-size-5 is-size-6-touch">
             {% block content %}{% endblock %}
         </div>
     </section>
-    <footer  class="section">
+    <section  class="section ">
         <div class="container">
             <div class="buttons is-centered">
-                <a class="button is-text">
-                    <i class="fab fa-facebook-square fa-2x"></i>
+                <a class="button is-outlined is-white">
+                  <i class="fab fa-facebook-f"></i>
                   </a>
-                  <a class="button is-text">
-                    <i class="fab fa-twitter-square fa-2x"></i>
+                  <a class="button is-outlined is-white" href="https://twitter.com/antoniofregoso">
+                    <i class="fab fa-twitter"></i>
                   </a>
-                  <a class="button is-text">
-                    <i class="fab fa-instagram-square fa-2x"></i>
+                  <a class="button is-outlined is-white" href="https://www.instagram.com/antoniofregoso/">
+                    <i class="fab fa-instagram"></i>
                   </a>
-                  <a class="button is-text">
-                    <i class="fab fa-tiktok fa-2x"></i>
+                  <a class="button is-outlined is-white" href="https://www.tiktok.com/@antoniofregoso.mx">
+                    <i class="fab fa-tiktok"></i>
                   </a>
-                  <a class="button is-text">
-                    <i class="fab fa-linkedin fa-2x"></i>
+                  <a class="button is-outlined is-white" href="https://www.linkedin.com/in/antoniofregoso/">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a class="button is-outlined is-white" href="https://github.com/antoniofregoso">
+                    <i class="fab fa-github"></i>
                   </a>
             </div>
         </div>            
-    </footer>
-    <script src="static/js/me.js"></script>
+      </section>
+      <footer class="footer">
+        <div class="content">
+          <div class="has-text-left is-pulled-left">
+            <p>Diseño y hosting por <a href="https://antoniofregoso.com/">Antonio Fregoso</a>.</p>
+          </div>
+          <div class="has-text-right is-pulled-right">
+            <a href="https://antoniofregoso.com/legal/privacy-policy">Política de privacidad</a> |
+            <a href="https://antoniofregoso.com/legal/terms-of-use">Términos de Uso</a> |
+            <a href="https://antoniofregoso.com/legal/advice">Aviso Legal</a>
+          </div>
+        </div>
+      </footer>
+    <script src="{{ url_for('static', filename='js/me.js') }}"></script>
 </body>
 </html>

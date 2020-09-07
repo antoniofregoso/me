@@ -3,101 +3,102 @@
 {% block content %}
 
     <article data-animation="lightSpeedInRight" >
-        <div class="box touchpoint">
-            <article class="media">
-                <div class="media-left">
-                    <i class="fab fa-youtube fa-2x"></i>
-                </div>
+        <div class="box touchpoint py-2 ">
+            <div class="media">
                 <div class="media-content">
-                    <div class="content">
+                    <div class="content pt-2">
                         ¿Estas suscrito a mi canal de Youtube?
                     </div> 
                 </div>
-            </article>
+                <div class="media-right">
+                    <img src="{{ url_for('static', filename='img/youtube.png') }}" class="image is-48x48">
+                </div>
+            </div>
         </div>
     </article>
 
-    <article  data-animation="lightSpeedInRight" >
-        <div class="box touchpoint">
-            <article class="media">
-                <div class="media-left">
-                    <i class="fab fa-soundcloud fa-2x"></i>
-                </div>
+    <article  data-animation="lightSpeedInLeft" >
+        <div class="box touchpoint py-2">
+            <div class="media">
                 <div class="media-content">
-                    <div class="content">
+                    <div class="content pt-2">
                         Mi podcast en SoundCloud
                     </div> 
                 </div>
-            </article>
+                <div class="media-right">
+                    <img src="{{ url_for('static', filename='img/youtube.png') }}" class="image is-48x48">
+                </div>
+            </div>
         </div>
     </article>
     <article data-animation="lightSpeedInRight" >
-        <div class="box touchpoint">
-            <article class="media">
-                <div class="media-left">
-                    <i class="fab fa-spotify fa-2x"></i>
-                </div>
+        <div class="box touchpoint py-2">
+            <div class="media">
                 <div class="media-content">
-                    <div class="content">
+                    <div class="content pt-2">
                         Mi podcast en Spotify
                     </div> 
                 </div>
-            </article>
+                <div class="media-right">
+                    <img src="{{ url_for('static', filename='img/youtube.png') }}" class="image is-48x48">
+                </div>
+            </div>
         </div>
     </article>
 
 
 
-    <article data-animation="lightSpeedInRight" >
-        <div class="box touchpoint">
-            <article class="media">
-                <div class="media-left">
-                    <i class="fas fa-bookmark fa-2x"></i>
+    <article data-animation="lightSpeedInLeft" >
+            <a class="box touchpoint py-2" href="https://antoniofregoso.com/blog/cultura-digital-1">
+                <div class="media">
+                    <div class="media-content">
+                        <div class="content pt-2">
+                            Mi blog sobre Cultura Digital
+                        </div> 
+                    </div>
+                    <div class="media-right">
+                        <img src="{{ url_for('static', filename='img/youtube.png') }}" class="image is-48x48">
+                    </div>
                 </div>
-                <div class="media-content">
-                    <div class="content">
-                        Mo blog sobre Cultura Digital
-                    </div> 
-                </div>
-            </article>
-        </div>
+            </a>
     </article>
 
     <article data-animation="lightSpeedInRight" >
-        <div class="box touchpoint">
-            <article class="media">
-                <div class="media-left">
-                    <i class="fas fa-bookmark fa-2x"></i>
-                </div>
+        <div class="box touchpoint py-2">
+            <div class="media">
                 <div class="media-content">
-                    <div class="content">
+                    <div class="content pt-2">
                         Mi blog sobre Transformación Digital
                     </div> 
                 </div>
-            </article>
+                <div class="media-right">
+                    <img src="{{ url_for('static', filename='img/youtube.png') }}" class="image is-48x48">
+                </div>
+            </div>
         </div>
     </article>
 
-    <article data-animation="lightSpeedInRight" >
-        <div class="box touchpoint">
-            <article class="media">
-                <div class="media-left">
-                    <i class="fas fa-bookmark fa-2x"></i>
-                </div>
+    <article data-animation="lightSpeedInLeft" >
+        <div class="box touchpoint py-2">
+            <div class="media">
                 <div class="media-content">
-                    <div class="content">
+                    <div class="content pt-2">
                         Mi blog sobre Marketing Digital
                     </div> 
                 </div>
-            </article>
+                <div class="media-right">
+                    <img src="{{ url_for('static', filename='img/youtube.png') }}" class="image is-48x48">
+                </div>
+            </div>
         </div>
     </article>
     <article data-animation="lightSpeedInRight" >
-        <div class="box touchpoint">
-            <article class="media">
+        <div class="box touchpoint py-2">
+            <div class="media">
                 <div class="media-content">
                     <div class="content">
-
+                        Apuntate en mi newsletter VIP
+                    </div> 
                     {% if form2 %}
                     <form action="" method="post">
                         {{ form2.hidden_tag() }}
@@ -120,15 +121,14 @@
                         </div>
                     </form>
                     {% endif %}
-                    </div> 
                 </div>
-            </article>
+            </div>
         </div>
     </article>
 
-    <article data-animation="lightSpeedInRight" >
-        <div class="box touchpoint">
-            <article class="media">
+    <article data-animation="lightSpeedInLeft" >
+        <div class="box touchpoint py-2">
+            <div class="media">
                 <div class="media-content">
                     <div class="content">
                         Contacto
@@ -182,7 +182,7 @@
                         {% endif %}
                    
                 </div>
-            </article>
+            </div>
         </div>
     </article>
 {% endblock %}
