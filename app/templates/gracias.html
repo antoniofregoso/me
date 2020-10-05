@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="has-text-light mb-6">
+    {% if source == 'ld' %}
+        <p>¡Gracias! En cuanto pueda me pongo en contacto contigo.</p>
+    {% elif source == 'ok' %}
+        <p>¡Hola! Ya estabas inscrito en mi Newsletter VIP.</p>
+    {% elif source =='add' %}
+        <p>¡Hola de nuevo! Ya estas inscrito en mi Newletter VIP.</p>
+    {% elif source == 'new' %}
+        <p>¡Bienvenido! Ya estas inscrito en mi Newletter VIP.</p>
+    {% else %}
+        <p>¡Hola! Tomaste un atajo.</p>
+        <p>Aquí puedes ver el contenido de mi árbol de enlaces <a href="{{ url_for('index') }}">Inicio</a>.</p>
+    {% endif %}
+    <p>Ahora eres parte de la Transformación Digital políticamente incorrecta.</p>
+</div>
+{% endblock %}

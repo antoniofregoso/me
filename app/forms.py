@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, Email, Length
 class LeadForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
-    message = TextAreaField('About me', validators=[Length(min=0, max=140)])
+    message = TextAreaField('Description', validators=[Length(min=0, max=140)])
     utm_campaign = HiddenField()
     utm_source = HiddenField()
     utm_medium = HiddenField()
