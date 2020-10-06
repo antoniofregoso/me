@@ -6,7 +6,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     config = configparser.ConfigParser()
     path_config_file = os.path.join(basedir , 'me.ini')
-    config.read(path_config_file)
+    config.read(path_config_file, encoding='utf-8')
     OPTIONS = config['options']
     ODOO = config['odoo']
     CRM = config['crm']
