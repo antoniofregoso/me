@@ -7,6 +7,7 @@
     <meta name="generator" content="Flask"/>
     <meta name="author" content="Antonio Fregoso" />
     <meta name="robots" content="index"/>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <title>Antonio Fregoso</title>
     <meta name="description" content="Árbol de enlaces de Antonio Fregoso. Especialista en Transformación Digital políticamente incorrecta"/>
     <meta name="keywords" content="transformación digital, marketing digital, estratégia digital, consultoría, mentoring"/>
@@ -19,11 +20,23 @@
 		<!--  Non-Essential, But Recommended -->
 		<meta property="og:site_name" content="Antonio Fregoso">
     <meta name="twitter:image:alt" content="Transformación Digital Políticamente Incorrecta">	
-		<meta name="twitter:site" content="@antoniofregoso">    
-    <!--  Non-Essential, But Required for Analytics -->		
+		<meta name="twitter:site" content="@antoniofregoso">   
     <!--Styles-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/me.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/animate.css/animate.min.css') }}">
+    
+    {% if tracking['ga'].startswith('UA-')  %}
+
+    {% endif %}  
+    {% if fb %}
+
+    {% endif %} 
+
+    {% if fb %}
+
+    {% endif %} 
+
+
 {% include "snippets/metatags.html" %}
 </head>
 <body>
@@ -36,7 +49,7 @@
               <h1 class="title">
                 <img class="logo" src="{{ url_for('static', filename='img/antoniofregoso.png') }}" data-animation="flipInY">
               </h1>
-              <h2 class="subtitle has-text-light is-size-6" data-animation="zoomInUp">
+              <h2 class="subtitle has-text-light is-size-6" data-animation="zoomInDown">
                 Transformación Digital</br>Politicamente Incorrecta
               </h2>
         </div>

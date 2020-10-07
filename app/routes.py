@@ -1,5 +1,5 @@
 import os
-from flask import render_template,  send_from_directory, request, redirect, url_for
+from flask import render_template,  request, redirect, url_for
 from app import app
 from app.forms import LeadForm, NewsletterForm
 from app.odoo import server
@@ -48,7 +48,8 @@ def index():
                 res = {'contact_id':contact_id, 'list_id':list_id}
                 crm.create('mailing.contact.subscription',res)
                 return redirect('/gracias/new')
-    return render_template('index.html', form=form, form2=form2)
+    tracking = {'ga':Config.OPTIONS['google'], 'fb':Config.OPTIONS['facebook'], 'at':Config.OPTIONS['addthis']}
+    return render_template('index.html', form=form, form2=form2, tracking=tracking)
 
 @app.route('/gracias')
 @app.route('/gracias/<source>')
@@ -57,8 +58,6 @@ def gracias(source='ups'):
     print(source)
     return render_template('gracias.html', source=source)
 
-@app.route('/favicon.ico') 
-def favicon(): 
-    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
 
     
