@@ -8,36 +8,36 @@
     <meta name="author" content="Antonio Fregoso" />
     <meta name="robots" content="index"/>
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <title>Antonio Fregoso</title>
-    <meta name="description" content="Árbol de enlaces de Antonio Fregoso. Especialista en Transformación Digital políticamente incorrecta"/>
+    <title>Antonio Fregoso | Árbol de enlaces</title>
+    <meta name="description" content="Árbol de enlaces de Antonio Fregoso. Especialista en Transformación Digital y Marketing Digital"/>
     <meta name="keywords" content="transformación digital, marketing digital, estratégia digital, consultoría, mentoring"/>
-     <!--  Essential META Tags -->
-    <meta property="og:title" content="Antonio Fregoso">
-		<meta property="og:description" content="Árbol de enlaces de Antonio Fregoso. Especialista en Transformación Digital políticamente incorrecta.">
-		<meta property="og:image" content="{{ url_for('static', filename='img/antonio-fregoso.png') }}">
-		<meta property="og:url" content="https://hola.antoniofregoso.com">
-		<meta name="twitter:card" content="summary_large_image">
-		<!--  Non-Essential, But Recommended -->
-		<meta property="og:site_name" content="Antonio Fregoso">
-    <meta name="twitter:image:alt" content="Transformación Digital Políticamente Incorrecta">	
-		<meta name="twitter:site" content="@antoniofregoso">   
+    {% include "snippets/metatags.html" %}
     <!--Styles-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/me.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='node_modules/animate.css/animate.min.css') }}">
-    
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "name": "Antonio Fregoso",
+        "url": "https://www.antoniofregoso.com/",
+        "image": "https://hola.antoniofregoso.com/static/img/face.jpg",
+        "sameAs": [
+          "https://twitter.com/antoniofregoso",
+          "https://www.instagram.com/antoniofregoso",
+          "https://www.linkedin.com/in/antoniofregoso",
+          "https://soundcloud.com/antoniofregoso",
+          "https://github.com/antoniofregoso",
+          "https://www.antoniofregoso.com/"
+        ],
+        "jobTitle": "Consultor en Transformación Digital"  
+      }
+      </script>
     {% if tracking['ga'].startswith('UA-')  %}
-
+      {% include "snippets/google.html" %}
     {% endif %}  
-    {% if fb %}
-
-    {% endif %} 
-
-    {% if fb %}
-
-    {% endif %} 
-
-
-{% include "snippets/metatags.html" %}
+    {% include "snippets/pixel.html" %}
 </head>
 <body>
     <header  class="hero is-small">
@@ -47,9 +47,9 @@
                 <img class="is-rounded is-avatar" src="{{ url_for('static', filename='img/face.jpg') }}" data-animation="rotateIn">
               </figure>
               <h1 class="title">
-                <img class="logo" src="{{ url_for('static', filename='img/antoniofregoso.png') }}" data-animation="flipInY">
+                <img class="logo" src="{{ url_for('static', filename='img/antoniofregoso.png') }}" data-animation="flipInY"> 
               </h1>
-              <h2 class="subtitle has-text-light is-size-6" data-animation="zoomInDown">
+              <h2 class="subtitle has-text-light is-size-6">
                 Transformación Digital</br>Politicamente Incorrecta
               </h2>
         </div>
@@ -66,19 +66,19 @@
                 <a class="button is-outlined is-white">
                   <i class="fab fa-facebook-f"></i>
                   </a>
-                  <a class="button is-outlined is-white" href="https://twitter.com/antoniofregoso">
+                  <a class="button is-outlined is-white" href="https://twitter.com/antoniofregoso" target="_blank">
                     <i class="fab fa-twitter"></i>
                   </a>
-                  <a class="button is-outlined is-white" href="https://www.instagram.com/antoniofregoso/">
+                  <a class="button is-outlined is-white" href="https://www.instagram.com/antoniofregoso/" target="_blank">
                     <i class="fab fa-instagram"></i>
                   </a>
-                  <a class="button is-outlined is-white" href="https://www.tiktok.com/@antoniofregoso.mx">
+                  <a class="button is-outlined is-white" href="https://www.tiktok.com/@antoniofregoso.mx" target="_blank">
                     <i class="fab fa-tiktok"></i>
                   </a>
-                  <a class="button is-outlined is-white" href="https://www.linkedin.com/in/antoniofregoso/">
+                  <a class="button is-outlined is-white" href="https://www.linkedin.com/in/antoniofregoso/" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                   </a>
-                  <a class="button is-outlined is-white" href="https://github.com/antoniofregoso">
+                  <a class="button is-outlined is-white" href="https://github.com/antoniofregoso" target="_blank"> 
                     <i class="fab fa-github"></i>
                   </a>
             </div>
@@ -95,5 +95,8 @@
         </div>
       </footer>
     <script src="{{ url_for('static', filename='js/me.js') }}"></script>
+    {% if tracking['at'].startswith('ra-') %}
+    {% include "snippets/addthis.html" %}
+    {% endif %} 
 </body>
 </html>

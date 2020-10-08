@@ -55,8 +55,8 @@ def index():
 @app.route('/gracias/<source>')
 def gracias(source='ups'):
     source = source
-    print(source)
-    return render_template('gracias.html', source=source)
+    tracking = {'ga':Config.OPTIONS['google'], 'fb':Config.OPTIONS['facebook'], 'at':Config.OPTIONS['addthis']}
+    return render_template('gracias.html', source=source, tracking=tracking)
 
 
 

@@ -1,11 +1,9 @@
-{% if ga.startswith('UA-') %}
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-XX"></script>
-<script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
+º <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{tracking['ga']}}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
- gtag({{"'config', '"|safe + ga + "'"|safe}});
-</script>
-{% endif %}  
+        gtag('config', '{{tracking["ga"]}}');
+      </script>

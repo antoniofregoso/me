@@ -1,19 +1,32 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="has-text-light mb-6">
+<div class="has-text-light mt-6">
     {% if source == 'ld' %}
         <p>¡Gracias! En cuanto pueda me pongo en contacto contigo.</p>
+        <script>
+            fbq('track', 'Lead');
+        </script>
     {% elif source == 'ok' %}
         <p>¡Hola! Ya estabas inscrito en mi Newsletter VIP.</p>
+        <script>
+            fbq('track', 'Subscribe');
+        </script>
     {% elif source =='add' %}
         <p>¡Hola de nuevo! Ya estas inscrito en mi Newletter VIP.</p>
+        <script>
+            fbq('track', 'Subscribe');
+        </script>
     {% elif source == 'new' %}
         <p>¡Bienvenido! Ya estas inscrito en mi Newletter VIP.</p>
+        <script>
+            fbq('track', 'Subscribe');
+        </script>
     {% else %}
         <p>¡Hola! Tomaste un atajo.</p>
         <p>Aquí puedes ver el contenido de mi árbol de enlaces <a href="{{ url_for('index') }}">Inicio</a>.</p>
     {% endif %}
-    <p>Ahora eres parte de la Transformación Digital políticamente incorrecta.</p>
+    <p >Ahora eres parte de la Transformación Digital políticamente incorrecta.</p>
+    <p class="mt-6">Agregame a tu lista de contactos <a class="button is-small" href="{{ url_for('static', filename='vcf/Antonio-Fregoso.vcf') }}"><span class="icon is-small"><i class="fas fa-address-card"></i></span> <span>VCard</span></a></p>
 </div>
 {% endblock %}
